@@ -162,9 +162,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               _onChanged();
                             },
                             onSaved: (Country? country) => _onSubmit(),
-                            validator: (country) {
+                            validator: (Country? country) {
                               if (country == null) {
-                                return 'can\'t empty';
+                                return 'Can\'t empty';
+                              }
+                              if (country.name != 'Canada') {
+                                return 'Should residents in Canada';
                               }
                               return null;
                             },
